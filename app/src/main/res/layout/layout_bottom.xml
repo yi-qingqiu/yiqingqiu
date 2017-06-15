@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x110"
+    android:layout_alignParentBottom="true"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#dfdfdd" />
+    <!-- 底部导航 -->
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="53.5dp"
+        android:background="#f9f9f9"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible">
+        <!-- 首页 -->
+        <RelativeLayout
+            android:id="@+id/rl_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp">
+
+
+            <ImageView
+                android:id="@+id/tab_img_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff"
+                android:focusable="false"
+                android:scaleType="centerInside"
+              />
+
+            <TextView
+                android:id="@+id/tab_text_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tab_img_home"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="首页"
+                android:textColor="#abadbb"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
+        <!-- 计划 -->
+        <RelativeLayout
+            android:id="@+id/rl_plan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp">
+
+
+            <ImageView
+                android:id="@+id/tab_img_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff"
+                android:focusable="false"
+                android:scaleType="centerInside"
+               />
+
+            <TextView
+                android:id="@+id/tab_text_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tab_img_plan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="计划"
+                android:textColor="#abadbb"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
+
+        <!-- quanzi -->
+        <RelativeLayout
+            android:id="@+id/rl_circle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp">
+
+
+            <ImageView
+                android:id="@+id/tab_img_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff"
+                android:focusable="false"
+                android:scaleType="centerInside"
+                />
+
+            <TextView
+                android:id="@+id/tab_text_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tab_img_circle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="圈子"
+                android:textColor="#abadbb"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <!-- 发现 -->
+        <RelativeLayout
+            android:id="@+id/rl_discover"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp">
+
+
+            <ImageView
+                android:id="@+id/tab_img_discover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff"
+                android:focusable="false"
+                android:scaleType="centerInside"
+               />
+
+            <TextView
+                android:id="@+id/tab_text_discover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tab_img_discover"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="发现"
+                android:textColor="#abadbb"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
+
+        <!-- 我的 -->
+        <RelativeLayout
+            android:id="@+id/rl_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp">
+
+            <ImageView
+                android:id="@+id/tab_img_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff"
+                android:focusable="false"
+                android:scaleType="centerInside"
+                />
+
+            <TextView
+                android:id="@+id/tab_text_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tab_img_mine"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="我的"
+                android:textColor="#abadbb"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

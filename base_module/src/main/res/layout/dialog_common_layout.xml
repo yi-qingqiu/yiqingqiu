@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:padding="20.0dip">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/common_alert_radius"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingRight="3dp"
+            android:paddingTop="3dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/common_alert_radius"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="提示"
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:text="你还没有登陆，请登录后操作。。。"
+            android:id="@+id/message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.5"
+            android:minHeight="60dp"
+            android:paddingLeft="20.0dip"
+            android:paddingRight="20.0dip"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#ffd0d0d0" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:text="确定"
+                android:id="@+id/positiveButton"
+                android:layout_width="114.0dip"
+                android:layout_height="40.0dip"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="0.05dip"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#c4c4c4c4"
+                android:visibility="gone" />
+
+            <Button
+                android:text="取消"
+                android:id="@+id/negativeButton"
+                android:layout_width="114.0dip"
+                android:layout_height="40.0dip"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

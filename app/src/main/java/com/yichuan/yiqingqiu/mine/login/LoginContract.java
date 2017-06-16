@@ -12,15 +12,13 @@ import com.yichuan.yiqingqiu.base.BaseView;
 
 public interface LoginContract {
     interface  View extends BaseView<Presenter> {
-        void loadingStart();
-        void loadingSucess();
-        void loadingResult();
+       void showLoading();
+        void dismissLoading();
+        void closePage();
     }
 
     interface Presenter extends BasePresenter {
-        void login(String phone, String password);
-        void loginResult();
-        void result(int requestCode, int resultCode);
-
+        void qqLogin();
+        void phoneLogin();
     }
 }

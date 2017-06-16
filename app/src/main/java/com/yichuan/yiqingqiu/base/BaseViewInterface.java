@@ -1,4 +1,4 @@
-package base.activity;
+package com.yichuan.yiqingqiu.base;
 
 /**
  * @author 易川

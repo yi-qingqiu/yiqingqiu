@@ -1,18 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <FrameLayout
-        android:id="@+id/login_frame"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+    <LinearLayout
+        android:id="@+id/ll_app_name"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="50dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="@dimen/x200">
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/tv_title1"
+            android:textSize="35sp"
+            android:textColor="@color/login_clolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="印象"
+            />
+        <TextView
+            android:id="@+id/tv_title2"
+            android:textSize="35sp"
+            android:textColor="@color/login_clolor"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="江南"
+            />
+    </LinearLayout>
 
-    </FrameLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_three_login"
+        android:layout_below="@+id/ll_app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/iv_qq_login"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/login_qq_hover"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/iv_wechat_login"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@drawable/login_wechat_hover"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/iv_weibo_login"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/login_weibo_hover"
+            android:layout_weight="1"
+            android:layout_marginRight="40dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/x80"
+        android:orientation="vertical"
+        android:layout_below="@+id/ll_three_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_marginTop="@dimen/x20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_gray_login_radius"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginRight="@dimen/x60"
+            android:textColor="@color/login_clolor"
+            android:text="手机登录"/>
+
+        <Button
+            android:id="@+id/btn_regeist"
+            android:layout_marginBottom="@dimen/x20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/login_clolor"
+            android:background="@drawable/btn_gray_login_radius"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_marginTop="@dimen/x50"
+            android:text="注册"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x50"
+        android:clickable="true"
+        android:scaleType="fitXY"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x100"
+        android:src="@drawable/login_close_shape"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>

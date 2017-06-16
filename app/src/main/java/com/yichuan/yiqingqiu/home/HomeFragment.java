@@ -21,6 +21,7 @@ import com.yichuan.yiqingqiu.home.adapter.HomeTypeAdapter;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
+import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.datatype.BmobQueryResult;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SQLQueryListener;
+import util.ToastUtil;
 
 /**
  * @author 易川
@@ -42,7 +44,7 @@ import cn.bmob.v3.listener.SQLQueryListener;
  */
 
 public class HomeFragment extends BaseFragment {
-
+    List<HomeAdBean> results = new ArrayList<>();
     @BindView(R.id.vp_home)
     Banner mVpBanner;
     Unbinder unbinder;
@@ -50,6 +52,7 @@ public class HomeFragment extends BaseFragment {
     @BindView(R.id.item_picker)
     DiscreteScrollView mItemPicker;
     InfiniteScrollAdapter infiniteAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -60,21 +63,20 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initView() {
-
-      //查询轮播图
-      String bql = "select * from HomeAdBean";
+        //查询轮播图
+        String bql = "select * from HomeAdBean";
         new BmobQuery<HomeAdBean>().doSQLQuery(bql, new SQLQueryListener<HomeAdBean>() {
             @Override
             public void done(BmobQueryResult<HomeAdBean> bmobQueryResult, BmobException e) {
                 Log.d("tag", "开始");
                 if (e == null) {
-                    List<HomeAdBean> results = bmobQueryResult.getResults();
+                    results = bmobQueryResult.getResults();
                     if (results != null && results.size() > 0) {
                         for (int i = 0; i < results.size(); i++) {
                             images.add(results.get(i).getImage_url());
                             Log.d("tag", "开始");
                         }
-                       setBinder(images);
+                        setBinder(images);
 
                     }
 
@@ -135,6 +137,29 @@ public class HomeFragment extends BaseFragment {
         mVpBanner.setIndicatorGravity(BannerConfig.CENTER);
         //banner设置方法全部调用完毕时最后调用
         mVpBanner.start();
+        mVpBanner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                switch (position) {
+                    case 0:
+                        ToastUtil.showTaost(getActivity(), "点击一下");
+                        break;
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                }
+            }
+        });
+
 
     }
 
@@ -148,7 +173,7 @@ public class HomeFragment extends BaseFragment {
                     .placeholder(R.drawable.ic_default_color)//占位图片
                     .error(R.drawable.ic_default_color)//默认图片
                     .diskCacheStrategy(DiskCacheStrategy.ALL)//
-                   // .centerCrop()
+                    // .centerCrop()
                     .crossFade()
                     .fitCenter()
                     .override(600, 300)

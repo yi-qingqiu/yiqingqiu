@@ -1,4 +1,4 @@
-package base.activity;
+package com.yichuan.yiqingqiu.base;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -9,15 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Window;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 
-import com.yichuan.base_module.R;
+import com.yichuan.yiqingqiu.R;
+import com.yichuan.yiqingqiu.app.AppManager;
 
-import app.AppManager;
 import base.dialog.CommonToast;
 import base.dialog.DialogControl;
 import base.dialog.DialogHelp;
+import butterknife.ButterKnife;
+import util.ToastUtil;
+
 
 /**
  * @author 易川
@@ -44,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             setContentView(getLayoutId());
         }
         mInflater = getLayoutInflater();
-
+        ButterKnife.bind(this);
         initView();
         initData();
         init(savedInstanceState);
@@ -62,9 +63,17 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     @Override
     protected void onPause() {
+
         super.onPause();
     }
 
+
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+
+    }
 
     @Override
     protected void onDestroy() {
@@ -132,13 +141,17 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         toast.show();
     }
 
+    public void showToast(Activity activity, String message) {
+        ToastUtil.showTaost(activity,message);
 
+    }
     //处理后退键的情况
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode==KeyEvent.KEYCODE_BACK){
 
-           closeActivityLeftToRight();
+            this.finish();  //finish当前activity
+            overridePendingTransition(R.anim.left_in, R.anim.right_out);
             return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -202,37 +215,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         AppManager.getAppManager().finishActivity(this);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
-    }
-
-    /**
-     * 打卡软键盘
-     *
-     * @param mEditText
-     *            输入框
-     * @param mContext
-     *            上下文
-     */
-    public static void openKeybord(EditText mEditText, Context mContext) {
-        InputMethodManager imm = (InputMethodManager) mContext
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(mEditText, InputMethodManager.RESULT_SHOWN);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,
-                InputMethodManager.HIDE_IMPLICIT_ONLY);
-    }
-
-    /**
-     * 关闭软键盘
-     *
-     * @param mEditText
-     *            输入框
-     * @param mContext
-     *            上下文
-     */
-    public static void closeKeybord(EditText mEditText, Context mContext) {
-        InputMethodManager imm = (InputMethodManager) mContext
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
-
-        imm.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
     }
 
 

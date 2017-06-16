@@ -12,7 +12,8 @@
     <color name="common_gray_text">#80000000</color>
     <color name="common_red_half_text">#80FF0000</color>
     <color name="main">#eb0044</color>
-
+    <color name="login_clolor">#74A4A9</color>
+    <color name="background_color">#eeeeee</color>
 
     <color name="btn_cancel_color">#999999</color>
     <color name="btn_confirm_color">#303F9F</color>

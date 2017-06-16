@@ -63,6 +63,7 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
     RelativeLayout mRlMine;
     @BindView(R.id.main_bottom)
     LinearLayout mMainBottom;
+
     private List<Fragment> mFragment = new ArrayList<>();
 
     @Override

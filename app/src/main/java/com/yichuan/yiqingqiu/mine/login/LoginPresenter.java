@@ -7,29 +7,21 @@ package com.yichuan.yiqingqiu.mine.login;
  */
 
 public class LoginPresenter implements LoginContract.Presenter{
-    LoginModel loginModel;
+    LoginContract.View view;
 
-    public LoginPresenter(LoginModel loginModel,LoginContract.View loginView){
-       this.loginModel = loginModel;
-        loginView.setPresenter(this);
-
-    }
-
-
-    @Override
-    public void login(String phone,String password) {
-
-        loginModel.toLogin(phone,password);
+    public LoginPresenter(LoginContract.View view){
+       this.view = view;
+        view.setPresenter(this);
 
     }
 
     @Override
-    public void loginResult() {
+    public void qqLogin() {
 
     }
 
     @Override
-    public void result(int requestCode, int resultCode) {
+    public void phoneLogin() {
 
     }
 

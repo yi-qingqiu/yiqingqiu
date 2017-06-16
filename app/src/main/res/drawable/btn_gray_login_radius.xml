@@ -11,6 +11,6 @@
 
     <stroke
         android:width="1px"
-        android:color="@color/text_light" />
+        android:color="@color/login_clolor" />
 
 </shape>

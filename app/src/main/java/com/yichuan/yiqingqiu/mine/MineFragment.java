@@ -8,6 +8,11 @@ import android.view.ViewGroup;
 import com.yichuan.yiqingqiu.R;
 
 import base.fragment.BaseFragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * @author 易川
@@ -15,12 +20,17 @@ import base.fragment.BaseFragment;
  * @desc ${TODO}
  */
 
-public class MineFragment extends BaseFragment{
+public class MineFragment extends BaseFragment {
+
+    @BindView(R.id.iv_user_head)
+    CircleImageView mIvUserHead;
+    Unbinder unbinder;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine, container, false);
 
+        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
@@ -34,4 +44,18 @@ public class MineFragment extends BaseFragment{
 
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    @OnClick({R.id.iv_user_head})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_user_head :
+                showFragmentBottomToTop(getActivity(), RegeisteActivity.class);
+                break;
+        }
+    }
 }

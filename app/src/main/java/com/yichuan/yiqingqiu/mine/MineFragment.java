@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yichuan.yiqingqiu.R;
+import com.yichuan.yiqingqiu.mine.login.LoginActivity;
 
 import base.fragment.BaseFragment;
 import butterknife.BindView;
@@ -54,7 +55,7 @@ public class MineFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_user_head :
-                showFragmentBottomToTop(getActivity(), RegeisteActivity.class);
+                showFragmentBottomToTop(getActivity(), LoginActivity.class);
                 break;
         }
     }

@@ -17,11 +17,10 @@ public class RegeisteActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_regeiste);
+
         ButterKnife.bind(this);
 
     }
-
 
     @Override
     public void initView() {
@@ -33,4 +32,8 @@ public class RegeisteActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_regeiste;
+    }
 }

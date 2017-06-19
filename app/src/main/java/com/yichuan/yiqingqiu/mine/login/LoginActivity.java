@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yichuan.yiqingqiu.R;
+import com.yichuan.yiqingqiu.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,7 +23,7 @@ import butterknife.OnClick;
  * @desc ${TODO}
  */
 
-public class LoginActivity extends com.yichuan.yiqingqiu.base.BaseActivity {
+public class LoginActivity extends BaseActivity implements LoginContract.View{
     @BindView(R.id.ll_app_name)
     LinearLayout mLlAppName;
     @BindView(R.id.iv_qq_login)
@@ -54,8 +55,8 @@ public class LoginActivity extends com.yichuan.yiqingqiu.base.BaseActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-      //  new LoginPresenter(this);
-        mPresenter.start();
+      new LoginPresenter(this);
+       mPresenter.start();
 
     }
 
@@ -69,10 +70,9 @@ public class LoginActivity extends com.yichuan.yiqingqiu.base.BaseActivity {
 
         Typeface fontFace = Typeface.createFromAsset(getAssets(),
                 "fonts/vae.ttf");
-        // mTvTitle1 = (TextView) findViewById(R.id.tv_title1);
-        // mTvTitle2 = (TextView) findViewById(R.id.tv_title2);
-        //  mTvTitle1.setTypeface(fontFace);
-        //  mTvTitle2.setTypeface(fontFace);
+
+          mTvTitle1.setTypeface(fontFace);
+          mTvTitle2.setTypeface(fontFace);
 
 
 
@@ -83,10 +83,10 @@ public class LoginActivity extends com.yichuan.yiqingqiu.base.BaseActivity {
 
     }
 
-   /* @Override
+    @Override
     public void setPresenter(LoginContract.Presenter presenter) {
         this.mPresenter = presenter;
-    }*/
+    }
 
     @OnClick({R.id.iv_qq_login, R.id.iv_wechat_login, R.id.iv_weibo_login, R.id.btn_login, R.id.btn_regeist, R.id.iv_close})
     public void onClick(View view) {
@@ -102,8 +102,23 @@ public class LoginActivity extends com.yichuan.yiqingqiu.base.BaseActivity {
             case R.id.btn_regeist:
                 break;
             case R.id.iv_close:
-              //  closePage();
+                closePage();
                 break;
         }
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void dismissLoading() {
+
+    }
+
+    @Override
+    public void closePage() {
+        closeActivityTopToBottom();
     }
 }

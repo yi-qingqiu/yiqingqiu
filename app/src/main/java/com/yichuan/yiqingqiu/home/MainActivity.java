@@ -15,7 +15,7 @@ import com.jaeger.library.StatusBarUtil;
 import com.yichuan.yiqingqiu.CircleFragment;
 import com.yichuan.yiqingqiu.PoetryFragment;
 import com.yichuan.yiqingqiu.R;
-import com.yichuan.yiqingqiu.TvLiveFragment;
+import com.yichuan.yiqingqiu.discover.fragment.DiscoverFragment;
 import com.yichuan.yiqingqiu.mine.MineFragment;
 
 import java.util.ArrayList;
@@ -81,7 +81,7 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
     //ViewPager初始化设置
     private void initMainViewPager() {
         mFragment.add(new HomeFragment());
-        mFragment.add(new TvLiveFragment());
+        mFragment.add(new DiscoverFragment());
         mFragment.add(new CircleFragment());
         mFragment.add(new PoetryFragment());
         mFragment.add(new MineFragment());

@@ -84,6 +84,7 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
+
         mItemPicker.setOrientation(Orientation.HORIZONTAL);
         //页面切换的监听
         mItemPicker.addOnItemChangedListener(new DiscreteScrollView.OnItemChangedListener<RecyclerView.ViewHolder>() {
@@ -99,6 +100,8 @@ public class HomeFragment extends BaseFragment {
         mItemPicker.setItemTransformer(new ScaleTransformer.Builder()
                 .setMinScale(0.8f)
                 .build());
+
+
     }
 
     @Override

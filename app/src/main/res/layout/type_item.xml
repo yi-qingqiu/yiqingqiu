@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/x450"
-    android:layout_height="@dimen/x300"
+    android:layout_width="@dimen/x480"
+    android:layout_height="@dimen/x500"
     android:gravity="center"
+    android:background="@drawable/btn_coment_bg"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,6 +15,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,21 +30,27 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/x10"
 
-            android:text="技术面分析"
+            android:text="西塘"
             android:textColor="@color/white"
-            android:textSize="22sp"/>
+            android:textSize="30sp"/>
 
         <TextView
             android:id="@+id/tv_simple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/x10"
+            android:layout_marginTop="@dimen/x15"
             android:text="依据历史数据科学分析"
             android:textColor="@color/white"
             android:textSize="18sp"/>
+        <ImageView
+            android:layout_marginTop="@dimen/x10"
+            android:id="@+id/iv_town"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
-
-</android.support.v7.widget.CardView>
+</LinearLayout>

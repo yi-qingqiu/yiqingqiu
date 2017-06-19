@@ -79,7 +79,7 @@
                 android:layout_below="@id/tab_img_plan"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="3dp"
-                android:text="计划"
+                android:text="发现"
                 android:textColor="#abadbb"
                 android:textSize="12sp"/>
 
